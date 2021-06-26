@@ -1,0 +1,14 @@
+.example-full-width{
+  width: 100%;
+}
+.btn-table-action{
+  height: 30px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    float: left;
+    justify-content: center;
+}
+.form{
+  max-width: 750px;
+}

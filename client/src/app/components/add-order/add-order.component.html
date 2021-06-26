@@ -1,0 +1,148 @@
+
+<div class="row d-flex justify-content-center" >
+  <div class="text-center page-header col-sm-12 form mb-2">
+  <span>Purchase Order Entry Form</span>
+</div>
+  <form [formGroup]="orderForm" class="col-sm-12 form">
+    <div class="row">
+      <div class="col-sm-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>REF ID</mat-label>
+          <input matInput formControlName="refId" placeholder="REF ID">
+          <mat-error *ngIf="orderForm.get('refId').hasError('required')">
+            Ref id is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>PO. NO</mat-label>
+          <input matInput formControlName="poNo" placeholder="PO. NO">
+          <mat-error *ngIf="orderForm.get('poNo').hasError('required')">
+            Purchase Order No. is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>PO DATE</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="poDate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="orderForm.get('poDate').hasError('required')">
+            Purchase Order Date is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>SUPPLIER</mat-label>
+          <mat-select formControlName="supplierId">
+            <mat-option *ngFor="let sup of supplier" [value]="sup.id">{{sup.name}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="orderForm.get('supplierId').hasError('required')">
+            Supplier is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>EXPECTED DATE</mat-label>
+          <input matInput [matDatepicker]="picker2" formControlName="expectedDate">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+          <mat-error *ngIf="orderForm.get('expectedDate').hasError('required')">
+            Expected Date is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>REMARK</mat-label>
+          <input matInput formControlName="remark" placeholder="Remark">
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+  <form [formGroup]="orderDetailsForm" (ngSubmit)="onAddItem(formDirective)" class="col-sm-12 mt-4 form" #formDirective="ngForm">
+    <mat-divider></mat-divider>
+    <div class="row mt-3">
+      <div class="col-sm-3">
+        <mat-form-field class="example-full-width">
+          <mat-label>ITEM</mat-label>
+          <input type="text" placeholder="ITEM" matInput
+              formControlName="product" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onOptionSelected($event)"
+              [displayWith]="displayFn">
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{option.name}}
+              </mat-option>
+            </mat-autocomplete>
+          <mat-error *ngIf="orderDetailsForm.get('product').hasError('required')">
+            Item name is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3">
+        <mat-form-field class="example-full-width">
+          <mat-label>QTY</mat-label>
+          <input matInput formControlName="qty" placeholder="Quantity">
+          <mat-error *ngIf="orderDetailsForm.get('qty').hasError('required')">
+            Quantity is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3">
+        <mat-form-field class="example-full-width">
+          <mat-label>RATE</mat-label>
+          <input matInput class="text-center" formControlName="rate" placeholder="$">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3 d-flex justify-content-end">
+        <button type="submit" mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
+          <mat-icon class="material-icons-outlined">
+            add
+            </mat-icon>
+        </button>
+      </div>
+    </div>
+  </form>
+  <mat-divider></mat-divider>
+  <div class="col-sm-12 form mt-4">
+    <table class="table table-sm table-bordered table-striped table-hover no-footer" width="100%"
+    cellspacing="0" role="grid">
+    <thead>
+      <tr>
+        <th class="text-center">ITEM NAME</th>
+        <th class="text-center">QTY.</th>
+        <th class="text-center">RATE($)</th>
+        <th class="text-center" style="width: 20%;">ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr role="row" class="odd" *ngFor="let item of lineItems; let i = index">
+        <td>{{item?.name}}</td>
+        <td class="text-center">{{item.qty}}</td>
+        <td class="text-center">{{item.rate}}</td>
+        <td class="text-center d-flex justify-content-center">
+          <button class="btn btn-edit mr-1 btn-outline-warning text-warning btn-table-action" data-toggle="modal"
+            (click)="onEditQualification(i)">
+            <mat-icon class="material-icons-outlined">
+              edit
+              </mat-icon>
+          </button>
+          <button class="btn btn-delete btn-outline-danger btn-table-action" (click)="onDeleteQualification(i)">
+            <mat-icon class="material-icons-outlined">
+              delete
+              </mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="col-sm-12 d-flex justify-content-end form">
+    <button mat-raised-button routerLink="/" color="primary" class="mr-1">Cancel</button>
+    <button (click)="onSave()" mat-raised-button color="accent">Save</button>
+  </div>
+</div>

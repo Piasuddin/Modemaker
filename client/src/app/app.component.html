@@ -1,0 +1,74 @@
+<mat-toolbar color="primary">
+  <button (click)="onMenuClick()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Modemakers</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-sidenav-container class="sidenav-container font-roboto">
+  <mat-sidenav-content>
+    <mat-drawer-container class="example-container margin-form-header-60" autosize>
+      <mat-drawer #drawer class="example-sidenav" [opened]="isSideNavOpen" mode="side">
+        <mat-nav-list>
+          <div class="profile-card">
+            <div class="header">
+              <!-- <div>
+                    <span style="font-size: 1.1rem; text-transform: uppercase;">{{user?.userName}}</span>
+                </div>
+                <span style="font-size: .9em;">{{user?.email}}</span> -->
+            </div>
+            <!-- <img src="{{appHost.hostName}}images/userimages/{{user?.image == undefined? 'nopfpic.png': user?.image}}" alt="Soufiane FADIL"> -->
+          </div>
+
+          <mat-divider></mat-divider>
+
+          <h2 matSubheader style="padding: 12px 16px 13px 16px; height: 3px;">Pages</h2>
+
+          <a mat-list-item routerLinkActive="list-item-active" style="font-size: 13px;"
+            routerLink="/dashboard">Dashboard</a>
+
+          <mat-accordion multi="true">
+            <mat-expansion-panel class="no-shadow">
+              <mat-expansion-panel-header style="height: 40px!important;" fxLayout="row">
+                <mat-panel-title>
+                  <mat-icon style="font-size: 19px;">import_contacts</mat-icon>
+                  Manage Order
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-nav-list class="ml-0" dense>
+                <mat-list-item>
+                  <a routerLink="/list" routerLinkActive="list-item-active" class="side-nav-btn">Ordered List</a>
+                </mat-list-item>
+              </mat-nav-list>
+            </mat-expansion-panel>
+          </mat-accordion>
+          <a mat-list-item routerLinkActive="list-item-active" style="font-size: 13px;" routerLink="/">Link 1</a>
+          <a mat-list-item routerLinkActive="list-item-active" style="font-size: 13px;" routerLink="/">Link 2</a>
+          <mat-divider></mat-divider>
+
+          <h2 matSubheader style="padding: 12px 16px 13px 16px; height: 3px;">Tools</h2>
+
+          <a mat-list-item routerLinkActive="list-item-active" style="font-size: 13px;" routerLink="/">
+            Link 3
+          </a>
+
+          <a mat-list-item routerLinkActive="list-item-active" style="font-size: 13px;" routerLink="/">
+            Link 4
+          </a>
+
+        </mat-nav-list>
+      </mat-drawer>
+      <mat-drawer-content>
+        <div class="container">
+          <router-outlet></router-outlet>
+        </div>
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </mat-sidenav-content>
+</mat-sidenav-container>

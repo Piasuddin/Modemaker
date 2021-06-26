@@ -1,0 +1,253 @@
+.dashboard-basic-info{
+  width: 100%;
+  height: 130px;
+  display: table;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+.dbi-1{
+  background-image: linear-gradient(to right, #FF8A65 , #ffad93);
+  /* background: #FF8A65; */
+}
+.dbi-2{
+  background-image: linear-gradient(to right, #9575CD , #b49edc);
+}
+.dbi-3{
+  background-image: linear-gradient(to right, #F06292 , #f491b2);
+}
+.dbi-4{
+  background-image: linear-gradient(to right, #4DB6AC , #82cbc4);
+}
+.dbi-5{
+  background-image: linear-gradient(to right, #607D8B ,#8fa4ad);
+}
+.dbi-6{
+  background-image: linear-gradient(to right, #F6BE6B , #f8d197);
+}
+.dbi-7{
+  background-image: linear-gradient(to right, #669FF9 , #93bbfa);
+}
+.dbi-8{
+  background-image: linear-gradient(to right, #EE6D7F , #f398a5);
+}
+.dashboard-info-icon{
+  width: 60px;
+  float: left;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.dashboard-icon-container{
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  font-size: 24px;
+  color: white;
+}
+.dashboard-info-container{
+  height: 100%;
+  display: table-cell;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  vertical-align: middle;
+  color: white;
+  font-size: 12px;
+  width: 100%;
+}
+.info-progress-bar{
+  width: 95%;
+  border-radius: 5px;
+  height: 3px;
+  margin-top: 5px;
+}
+.info-progress-amount{
+  border-radius: 5px;
+  height: 3px;
+  background: #fff;
+}
+.total-number{
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 5px;
+}
+.dic-1{
+  background: #b26046;
+}
+.ipb-1{
+  background: #b26046;
+}
+.ipa-1{
+  width: 35%;
+}
+.dic-2{
+  background: #68518f;
+}
+.ipb-2{
+  background: #68518f;
+}
+.ipa-2{
+  width: 45%;
+}
+.dic-3{
+  background: #a84466;
+}
+.ipb-3{
+  background: #a84466;
+}
+.ipa-3{
+  width: 55%;
+}
+.dic-4{
+  background: #357f78;
+}
+.ipb-4{
+  background: #357f78;
+}
+.ipa-4{
+  width: 15%;
+}
+.dic-5{
+  background: #435761;
+}
+.ipb-5{
+  background: #435761;
+}
+.ipa-5{
+  width: 35%;
+}
+.dic-6{
+  background: #ac854a;
+}
+.ipb-6{
+  background: #ac854a;
+}
+.ipa-6{
+  width: 75%;
+}
+.dic-7{
+  background: #476fae;
+}
+.ipb-7{
+  background: #476fae;
+}
+.ipa-7{
+  width: 95%;
+}
+.dic-8{
+  background: #a64c58;
+}
+.ipb-8{
+  background: #a64c58;
+}
+.ipa-8{
+  width: 5%;
+}
+.example-tab-icon {
+  margin-right: 8px;
+  font-size: 18px;
+  background: #b2b2b2;
+  border-radius: 30px;
+  line-height: 30px;
+  height: 30px;
+  width: 30px;
+}
+.notice-sl{
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  padding-top: 7px;
+  font-weight: 600;
+  background: #6AA1FA;
+  color: white;
+  font-size: 19px;
+  border-radius: 40px;
+}
+.notice-description{
+  font-size: 12px;
+}
+.notice-see-more{
+  font-size: 12px;
+  color: cornflowerblue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.notice-date-container{
+  height: 50px;
+  background: #6AA1FA;
+  color: white;
+  text-align: center;
+  width: 50px;
+  display: block;
+  border-radius: 50px;
+}
+.notice-day{
+  font-size: 19px;
+  font-weight: 600;
+}
+.notice-month-container{
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  font-size: 13px;
+}
+.notice-day-count{
+  width: 91px;
+  text-align: right;
+  float: right;
+  font-size: 10px;
+}
+.activity-container{
+  position: relative;
+  padding-left: 4em;
+  font-size: 12px;
+  padding-top: 1rem;
+}
+.activity-time{
+  font-size: 10px;
+  padding-left: 0px;
+}
+.recent-activities-container{
+  width: 90%;
+  margin: auto;
+  height: 309px;
+}
+.recent-activities-watch{
+  position: absolute;
+  left: 0;
+  top: 1.2rem;
+}
+.row-of-description{
+    position: relative;
+}
+.row-height-marker{
+  height: 81%;
+  width: 2px;
+  float: left;
+  position: absolute;
+  top: 1.8rem;
+  left: 5px;
+}
+.mesage-history-container{
+  font-weight: 600;
+  height: 175px;
+  width: 175px;
+  border-radius: 50%;
+  border: 1px solid #6B6F63;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6B6F63;
+}
+.message-amount{
+  font-size: 2rem;
+  color: royalblue;
+}
+.message-history-header{
+  font-size: 2rem;
+  margin-bottom: 17px;
+  font-weight: 500;
+}

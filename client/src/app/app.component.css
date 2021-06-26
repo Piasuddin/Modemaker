@@ -1,0 +1,126 @@
+.full-width {
+  width: 100%;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.file-uploader {
+  min-width: 200px;
+  height: 200px;
+  border: 1px solid #cdcdcd;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 200px;
+  text-align: center;
+  min-width: 200px;
+  cursor: pointer;
+}
+table {
+  width: 100%;
+}
+.mat-action-btn{
+    height: 35px;
+    width: 35px;
+    margin-left: 2px;
+}
+:host::ng-deep .mat-fab .mat-button-wrapper{
+  padding: 0px!important;
+}
+
+.spacer{
+  flex: 1 1 auto;
+}
+.example-card{
+  position: relative;
+}
+.cart-item:hover{
+  transform: scale(1.1);
+}
+:host{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.mat-drawer{
+  width: 350px;
+}
+.example-sidenav {
+  width: 270px;
+  position: fixed;
+  margin-top: 65px;
+}
+.spacer{
+  flex: 1 1 auto;
+}
+.margin-form-header-60{
+  background-color: #fff;
+}
+.card-after-content {
+  margin-top: 20px!important;
+}
+.margin-form-header {
+margin-top: 5px!important;
+padding-bottom: 60px;
+}
+.nav-link{
+  display: flex;
+}
+.no-shadow {
+  box-shadow: none !important;
+}
+
+::ng-deep .mat-expansion-panel-body {
+  padding: 0px !important;
+  padding-left: 10px !important;
+}
+.mat-list-item{
+  height: 35px!important;
+  padding-left: 10px!important;
+}
+#content {
+background-color: red;
+min-height: 3000px;
+}
+.btn-side-nav-close{
+float: right;
+margin: 6px;
+}
+.mat-expansion-panel {
+border-bottom: 1px solid #E0E0E0;
+}
+.mat-expansion-panel-header {
+font-size: 13px!important;
+height: 37px!important;
+}
+.side-nav-btn{
+width: 100%;
+}
+.small-screen-header{
+background: #024731;
+color: white;
+margin-top: 57px;
+top: 50px;
+border-bottom: none!important;
+}
+.small-screen-logo-bar{
+background: #024731;
+color: white;
+margin-top: 57px;
+}
+.large-screen-header{
+background: #F5F5F5;
+color: black;
+border-bottom: 1px solid #fff;
+}
+.margin-auto{
+margin: auto;
+}
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 15646;
+}
